@@ -110,7 +110,7 @@ impl VerusThirBuildCtxt {
             }
             ExprKind::Assign(lhs, rhs, _) => {
                 let erase = should_erase_var(self, lhs.hir_id);
-                self.prep_expr(lhs, erase);
+                self.prep_expr(lhs, false);
                 self.prep_expr(rhs, erase);
             }
             ExprKind::AssignOp(_op, lhs, rhs) => {
